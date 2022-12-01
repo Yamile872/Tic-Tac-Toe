@@ -79,8 +79,22 @@ function win(){
     updateMarker(current_player);
 }
 
+function handleRestartClick(){
+    clicked = [];
+    boardBlocked = false;
+    current_player = "X";
+    player_clicked["X"]=[];
+    player_clicked["O"] = [];
+    document.getElementById('result').innerHTML = "";
+    document.getElementById('board').classList.remove("boardBlocked");
+    document.getElementById('result').classList.remove("visible");
+    document.querySelectorAll('.cell').forEach(cell => cell.textContent='');
+}
 
-
-
+function updateMarker(current_player){
+    player_counter[current_player] ++
+    document.getElementById('marker-' + current_player).innerHTML = player_counter[current_player];
+    
+}
 
 
